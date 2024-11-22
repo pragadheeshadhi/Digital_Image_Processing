@@ -1,0 +1,16 @@
+clc;
+close all;
+img=imread("cameraman.tif");
+gimg=img;
+subplot(2,2,1);
+imshow(img);
+title("Original image");
+H=1-(exp(-(D.^2)./(2*(u0^2))));
+subplot(2,2,2);
+imshow(abs(fftshift(H)));
+title("H(u,v)");
+G=H.*F;
+g=(ifft2(G));
+subplot(2,2,3);
+imshow(histeq(uint8(g)),[]);
+title("Resultant image");

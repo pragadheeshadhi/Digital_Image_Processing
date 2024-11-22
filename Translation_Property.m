@@ -1,0 +1,14 @@
+clc;
+close all;
+cb=checkerboard;
+imshow(cb);
+cb_ref = imref2d(size(cb));
+tx = 20;
+ty = 30;
+tform = transltform2d(tx,ty);
+[cb_translated,cb_translated_ref] = imwarp(cb,tform);
+figure;
+subplot(1,2,1);
+imshow(cb,cb_ref);
+subplot(1,2,2);
+imshow(cb_translated,cb_translated_ref);

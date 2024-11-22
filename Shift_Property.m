@@ -1,0 +1,13 @@
+clc;
+close all;
+I=imread("cameraman.tif");
+[x,y]=size(I);
+F=fftshift(fft2(I));
+F=log(1+abs(F));
+IS=imtranslate(I,[50 50]);
+ISF = fftshift(fft2(IS));
+ISF=log(1+abs(ISF));
+figure,imshow(I,[]),title("Original image");
+figure,imshow(IS,[]),title("Shifted image");
+figure,imshow(F,[]),title("Fourier transform of original image");
+figure,imshow(ISF,[]),title("Fourier transform of shifted image");

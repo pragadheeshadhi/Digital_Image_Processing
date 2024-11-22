@@ -1,0 +1,16 @@
+clc;
+close all;
+a=imread("cameraman.tif");
+subplot(2,2,1);
+imshow(a);
+title("Original image");
+a=im2double(a);
+PSF=fspecial("motion",21,11);
+a_blurred = imfilter(a,PSF,"conv","circular");
+subplot(2,2,2);
+imshow(a_blurred);
+title("Blurred image");
+DD=deconvreg(a_blurred,PSF);
+subplot(2,2,3);
+imshow(DD);
+title("Restored image");

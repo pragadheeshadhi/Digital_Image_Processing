@@ -1,0 +1,12 @@
+x=imread("cameraman.tif");
+h=fspecial('gaussian');
+x1=imfilter(x,h,'replicate');
+h1=fspecial('laplacian');
+x2=imfilter(x1,h1,'replicate');
+subplot(2,2,1);
+imshowpair(x,x2,'montage');
+title("Original image and Filterd image");
+x3=imbinarize(x2);
+subplot(2,2,2);
+imshow(x3);
+title("LoG filtered image");

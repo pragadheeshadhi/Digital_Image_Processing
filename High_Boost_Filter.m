@@ -1,0 +1,12 @@
+clc;
+close all;
+a=imread("cameraman.tif");
+subplot(2,2,1);
+imshow(a);
+title("Original image");
+SHBF=[-1 -1 -1; -1 9 -1; -1 -1 -1];
+a1=conv2(a,SHBF,'same');
+a2=uint8(a1);
+subplot(2,2,2);
+imshow(a2);
+title("High Boost Filtered image");

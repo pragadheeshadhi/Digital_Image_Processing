@@ -1,0 +1,16 @@
+clc;
+close all;
+a=imread("cameraman.tif");
+b=histeq(a);
+subplot(2,2,1);
+imshow(a);
+title("Original image");
+subplot(2,2,2);
+imshow(b);
+title("Histogram equalized image");
+subplot(2,2,3);
+imhist(a);
+title("Original histogram");
+subplot(2,2,4);
+imhist(b);
+title("Equalized histogram");

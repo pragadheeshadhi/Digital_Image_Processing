@@ -1,0 +1,15 @@
+I=imread("cameraman.tif");
+figure;
+imshow(I);
+title("Original image");
+F=fft2(I);
+FS=fftshift(F);
+LG=log(1+abs(FS));
+figure;
+imshow(LG,[]);
+title("Fourier Transformed image");
+IFS=ifftshift(FS);
+IF=ifft2(IFS);
+figure;
+imshow(IF,[]);
+title("Inverse Fourier Transformed image");

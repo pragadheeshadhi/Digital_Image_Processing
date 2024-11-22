@@ -1,0 +1,12 @@
+clc;
+close all;
+x=imread("cameraman.tif");
+L=255;
+c=L/log10(1+L);
+d=c*log10(1+double(a));
+subplot(2,2,1);
+imshow(a);
+title("Original image");
+subplot(2,2,2);
+imshow(uint8(d));
+title("Log Transformation image");

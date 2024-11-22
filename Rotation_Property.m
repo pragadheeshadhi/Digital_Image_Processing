@@ -1,0 +1,21 @@
+clc;
+close all;
+a=zeros(256);
+[m,n]=size(a);
+a=imread("cameraman.tif");
+b=imrotate(a,45,'bilinear','crop');
+a1=log(1+abs(fftshift(fft2(a))));
+b1=log(1+abs(fftshift(fft2(b))));
+subplot(2,2,1);
+imshow(a);
+title('Original image');
+subplot(2,2,2);
+imshow(b);
+title('Image rotated by 45 degree');
+subplot(2,2,3);
+imshow(mat2gray(a1));
+title('Spectrum of original image');
+subplot(2,2,4);
+imshow(mat2gray(b1));
+title('Spectrum of rotated image');
+

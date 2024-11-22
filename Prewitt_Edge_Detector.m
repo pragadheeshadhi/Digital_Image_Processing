@@ -1,0 +1,18 @@
+clc;
+close all;
+I=imread("cameraman.tif");
+subplot(2,2,1);
+imshow(I);
+title("Original image");
+g=edge(I,'prewitt');
+subplot(2,2,2);
+imshow(g);
+title("Prewitt edge detector");
+h=edge(I,'prewitt',0.1);
+subplot(2,2,3);
+imshow(h);
+title("P-T");
+k=edge(I,'prewitt',0.1,'vertical');
+subplot(2,2,4);
+imshow(k);
+title("P-T-D");

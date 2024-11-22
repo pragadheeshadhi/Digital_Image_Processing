@@ -1,0 +1,14 @@
+clc;
+close all;
+I=imread("cameraman.tif");
+subplot(2,2,1);
+imshow(I);
+title("Original image");
+g=edge(I,'roberts');
+subplot(2,2,2);
+imshow(g);
+title("Roberts edge detector");
+h=edge(I,'roberts',0.1);
+subplot(2,2,3);
+imshow(h);
+title("R-T");
